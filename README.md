@@ -180,3 +180,200 @@ com.healthassist.Main
 - ui: JavaFX screens
 - db: database connection helper
 - sql/schema.sql: database schema and seed admin user
+
+## Downloading And Editing The Project From GitHub
+
+Use this section if another user wants to download the project, make changes, and upload those changes back to GitHub.
+
+### 1. Install Git
+
+Download and install Git from:
+
+```text
+https://git-scm.com/downloads
+```
+
+After installation, confirm Git works:
+
+```powershell
+git --version
+```
+
+### 2. Clone The Project
+
+Open PowerShell and choose where you want to save the project. For example:
+
+```powershell
+cd "C:\Users\Administrator\Documents"
+```
+
+Then clone the repository:
+
+```powershell
+git clone https://github.com/EOndoa/HealthAssistanceSystem.git
+```
+
+Enter the project folder:
+
+```powershell
+cd HealthAssistanceSystem
+```
+
+### 3. Open The Project For Editing
+
+You can open the project in any Java IDE, such as:
+
+- IntelliJ IDEA
+- Eclipse
+- NetBeans
+- Visual Studio Code
+
+Open the folder:
+
+```text
+HealthAssistanceSystem
+```
+
+Because the project uses Maven, the IDE should detect the `pom.xml` file and load the dependencies automatically.
+
+### 4. Create A New Branch Before Editing
+
+It is professional to work on a separate branch instead of editing `main` directly.
+
+Example:
+
+```powershell
+git checkout -b feature/update-interface
+```
+
+Use a clear branch name based on the work you are doing, such as:
+
+```text
+feature/add-reporting
+fix/login-validation
+docs/update-readme
+```
+
+### 5. Make Your Changes
+
+Edit the source code, database script, README, or screenshots as needed.
+
+Important project folders:
+
+```text
+src/main/java/com/healthassist
+src/main/resources/com/healthassist
+sql
+README.md
+```
+
+After editing, compile the project to make sure it still works:
+
+```powershell
+.\.tools\apache-maven-3.9.16\bin\mvn.cmd -q -DskipTests compile
+```
+
+Or, if Maven is installed globally:
+
+```powershell
+mvn -q -DskipTests compile
+```
+
+### 6. Check The Changed Files
+
+Before committing, check what changed:
+
+```powershell
+git status
+```
+
+To review the exact code changes:
+
+```powershell
+git diff
+```
+
+### 7. Add The Changes
+
+Add all modified files:
+
+```powershell
+git add .
+```
+
+Or add one file at a time:
+
+```powershell
+git add README.md
+```
+
+### 8. Commit The Changes
+
+Create a commit with a clear message:
+
+```powershell
+git commit -m "Update README with GitHub workflow instructions"
+```
+
+Good commit messages should explain what changed, for example:
+
+```text
+Add doctor referral workflow
+Fix patient appointment privacy
+Improve login screen layout
+Update database setup instructions
+```
+
+### 9. Push The Branch To GitHub
+
+Push your branch:
+
+```powershell
+git push -u origin feature/update-interface
+```
+
+If you are pushing directly to `main`, use:
+
+```powershell
+git push origin main
+```
+
+### 10. Create A Pull Request
+
+If you worked on a separate branch:
+
+1. Open the repository on GitHub.
+2. Click `Compare & pull request`.
+3. Write a short description of the change.
+4. Submit the pull request.
+
+This allows the project owner to review the changes before merging them into `main`.
+
+### 11. Keep Your Local Project Updated
+
+Before starting new work, download the latest changes:
+
+```powershell
+git checkout main
+git pull origin main
+```
+
+Then create a new branch for your next change:
+
+```powershell
+git checkout -b feature/new-change
+```
+
+### 12. Authentication Notes
+
+GitHub no longer accepts normal account passwords for Git push operations.
+
+If Git asks for a password, use a GitHub Personal Access Token.
+
+The token should have permission to read and write repository contents.
+
+Repository URL:
+
+```text
+https://github.com/EOndoa/HealthAssistanceSystem
+```
